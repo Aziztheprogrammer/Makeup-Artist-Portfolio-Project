@@ -1,0 +1,125 @@
+/* Start Global Rules */
+* {
+	box-sizing: border-box !important;
+	margin: 0px;
+	padding: 0px;
+}
+
+*:focus {
+	outline: none;	
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--main-color);
+	font-family: "Maven Pro", sans-serif;
+	color: var(--second-color);
+	min-height: 100vh;
+}
+
+/*Start Vriables*/
+:root {
+	--main-color: #0E0E0E;
+	--second-color: #F1F1F1;
+	--third-color: #FAA7DA;
+}
+
+.container {
+	padding: 0px 16px;
+	margin: auto;
+}
+
+@media (max-width: 992px) {
+	.container {
+		padding: 0px 48px;
+	}
+}
+
+
+/*Start Header*/
+
+header {
+	width: 100%;
+	font-size: 1.1rem;
+}
+
+header .container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header nav li {
+	position: relative;
+	display: inline-block;
+	padding: 16px 8px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+header nav li::after {
+	content: "";
+	position: absolute;
+	background-color: var(--second-color);
+	height: 1px;
+	width: 0%;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: 0.7s ease-in-out width;
+
+}
+
+header nav li:hover::after {
+	width: 100%;
+}
+
+header nav li:not(:last-child) {
+	margin-right: 24px;
+}
+
+
+header .social__links > a:not(:first-child) {
+	margin-left: 8px;
+}
+
+@media (max-width: 560px) {
+	header .container {
+		justify-content: center;
+		font-size: 1rem;
+	}
+
+	header .social__links {
+		display: none;
+	}
+
+	header nav li:not(:last-child) {
+		margin-right: 16px;
+	}
+}
+
+@media (max-width: 390px) {
+	header {
+		font-size: 0.8rem;
+	}
+} 
+
+/*End Header*/
+
+/*Start Main*/
+
+main {
+	height: calc(100vh - 58.39px);
+}
+
+@media (max-width: 560px) {
+	main {
+		height: calc(100vh - 56px);
+	}
+}
+
+/*End Main*/
