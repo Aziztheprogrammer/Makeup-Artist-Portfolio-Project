@@ -14,10 +14,22 @@ html {
 }
 
 body {
-	background-color: var(--main-color);
 	font-family: "Maven Pro", sans-serif;
 	color: var(--second-color);
 	min-height: 100vh;
+}
+
+body .bg__img__container {
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: brightness(50%);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	transition: 1s ease-in-out filter;
 }
 
 /*Start Vriables*/
@@ -114,12 +126,113 @@ header .social__links > a:not(:first-child) {
 
 main {
 	height: calc(100vh - 58.39px);
+	text-transform: uppercase;
+	font-size: 16px;
+	text-align: left;
 }
 
 @media (max-width: 560px) {
 	main {
 		height: calc(100vh - 56px);
+		font-size: 12px;
+		text-align: center;
 	}
+}
+
+@media (max-width: 390px) {
+	main {
+		font-size: 10px;
+	}
+}
+
+main .container {
+	height: 80%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 24px;
+}
+
+@media (max-width:  560px) {
+	main .container {
+		align-items: center;
+	}
+}
+
+main h1 {
+	font-size: 3.5em;
+	letter-spacing: 20px;
+    line-height: calc(100% + 15px);
+}
+
+main h1 span {
+	display: block;
+	font-weight: 700;
+}
+
+main p {
+	font-size: 1.1em;
+	letter-spacing: 1.5em;
+	margin-top: 5px;
+}
+
+main button {
+	font-size: 1.1em;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	border: 1px var(--second-color) solid;
+	background-color: transparent;
+	padding: 8px 32px;
+	transition: 0.7s ease-in-out all;
+}
+
+main button:hover {
+	background-color: var(--second-color);
+	color: var(--main-color);
+}
+
+main .switch__dots {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	transform: translateY(200%);
+	transition: 0.7s ease-in-out background-color;
+}
+
+@media (max-width:  560px) {
+	main .switch__dots {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+main .switch__dots > span {
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	background-color: transparent;
+	border: var(--second-color) 1px solid; 
+}
+
+@keyframes dotAnimationIn {
+	0% {
+		background-color: transparent;
+	}
+
+	100% {
+		background-color: var(--second-color);
+	}
+}
+
+main .switch__dots > .active {
+	background-color: var(--second-color);
+	animation: dotAnimationIn 0.5s ease-in-out;
 }
 
 /*End Main*/
