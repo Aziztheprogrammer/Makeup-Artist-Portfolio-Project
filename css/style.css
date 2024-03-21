@@ -21,6 +21,34 @@ body {
 	z-index: 2;
 }
 
+body > .page__loader {
+	background-color: var(--main-color);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.7s ease-in-out opacity;
+}
+
+body > .page__loader > h1 {
+	font-size: 2rem;
+	letter-spacing: 5px;
+	animation: pageLoaderAnimation ease-in-out 1s alternate 6;
+}
+
+@keyframes pageLoaderAnimation {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
 body .bg__img__container {
 	background-position: top center;
 	background-repeat: no-repeat;

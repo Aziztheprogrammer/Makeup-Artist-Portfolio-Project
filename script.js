@@ -19,7 +19,6 @@ function dotsAnimation() {
 let imgContainers = document.querySelectorAll(".bg__img__container");
 
 bgActiveIndex = 0;
-console.log(imgContainers)
 
 function bgAnimation() {
 	if (bgActiveIndex <= 2) {
@@ -40,3 +39,18 @@ function bgAnimation() {
 
 setInterval(dotsAnimation, 5000);
 setInterval(bgAnimation, 5000);
+
+// Page Loader Hide
+
+function pageLoaderAnimation() {
+	let pageLoader = document.querySelector(".page__loader");
+
+	setTimeout (function () {
+		pageLoader.style.opacity = 0;
+		setTimeout (function () {
+			pageLoader.style.display = "none";
+		}, 100)
+	}, 6000);
+}
+
+window.onload = pageLoaderAnimation;
