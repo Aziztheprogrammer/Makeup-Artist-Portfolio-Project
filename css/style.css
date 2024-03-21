@@ -15,6 +15,7 @@ html {
 
 body {
 	font-family: "Maven Pro", sans-serif;
+	background-color: var(--main-color);
 	color: var(--second-color);
 	min-height: 100vh;
 	z-index: 2;
@@ -23,7 +24,7 @@ body {
 body .bg__img__container {
 	background-position: top center;
 	background-repeat: no-repeat;
-	filter: brightness(50%);
+	filter: brightness(0%);
 	background-size: cover;
 	position: absolute;
 	top: 0px;
@@ -138,9 +139,9 @@ header .social__links > a:not(:first-child) {
 
 /*End Header*/
 
-/*Start Main*/
+/*Start Main Home*/
 
-main {
+main.home {
 	height: calc(100vh - 58.39px);
 	text-transform: uppercase;
 	font-size: 16px;
@@ -148,7 +149,7 @@ main {
 }
 
 @media (max-width: 560px) {
-	main {
+	main.home {
 		height: calc(100vh - 56px);
 		font-size: 12px;
 		text-align: center;
@@ -156,12 +157,12 @@ main {
 }
 
 @media (max-width: 390px) {
-	main {
+	main.home {
 		font-size: 10px;
 	}
 }
 
-main .container {
+main.home .container {
 	height: 80%;
 	position: relative;
 	display: flex;
@@ -172,29 +173,29 @@ main .container {
 }
 
 @media (max-width:  560px) {
-	main .container {
+	main.home .container {
 		align-items: center;
 	}
 }
 
-main h1 {
+main.home h1 {
 	font-size: 3.5em;
 	letter-spacing: 20px;
     line-height: calc(100% + 15px);
 }
 
-main h1 span {
+main.home h1 span {
 	display: block;
 	font-weight: 700;
 }
 
-main p {
+main.home p {
 	font-size: 1.1em;
 	letter-spacing: 1.5em;
 	margin-top: 5px;
 }
 
-main button {
+main.home a {
 	font-size: 1.1em;
 	text-transform: uppercase;
 	letter-spacing: 4px;
@@ -204,12 +205,12 @@ main button {
 	transition: 0.7s ease-in-out all;
 }
 
-main button:hover {
+main.home a:hover {
 	background-color: var(--second-color);
 	color: var(--main-color);
 }
 
-main .switch__dots {
+main.home .switch__dots {
 	position: absolute;
 	bottom: 0px;
 	right: 0px;
@@ -222,13 +223,13 @@ main .switch__dots {
 }
 
 @media (max-width:  560px) {
-	main .switch__dots {
+	main.home .switch__dots {
 		left: 50%;
 		transform: translateX(-50%);
 	}
 }
 
-main .switch__dots > span {
+main.home .switch__dots > span {
 	height: 15px;
 	width: 15px;
 	border-radius: 50%;
@@ -246,9 +247,115 @@ main .switch__dots > span {
 	}
 }
 
-main .switch__dots > .active {
+main.home .switch__dots > .active {
 	background-color: var(--second-color);
 	animation: dotAnimationIn 0.5s ease-in-out;
 }
 
-/*End Main*/
+/*End Main Home*/
+
+/*Start Main About*/
+
+main.about {
+	height: calc(100vh - 58.39px);
+	font-size: 16px;
+}
+
+@media (max-width: 560px) {
+	main.about {
+		height: calc(100vh - 56px);
+		font-size: 12px;
+	}
+}
+
+main.about .container {
+	height: calc(100% - 58.39px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 32px;
+	position: relative;
+}
+
+main.about .container::after {
+	content: "Makeup Artist";
+	text-transform: uppercase;
+	position: absolute;
+	right: 0px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: var(--third-color);
+	writing-mode: vertical-lr;
+	text-orientation: upright;
+	letter-spacing: 5px;
+}
+
+@media (max-width: 560px) {
+	main.about .container::after {
+		top: auto;
+		right: auto;
+		bottom: 0px;
+		left: 50%;
+		transform: translateX(-50%);
+		writing-mode: horizontal-tb;
+	}
+}
+
+@media (max-width: 560px) {
+	main.about .container {
+		height: calc(100% - 56px);
+		flex-direction: column;
+	}
+}
+
+main.about .container > .text__container {
+	width: 50%;
+	max-width: 600px;
+	min-width: 300px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+@media (max-width: 560px) {
+	main.about .container > .text__container {
+		text-align: center;
+	}
+}
+
+main.about .container > .text__container > h1 {
+	font-weight: 600;
+	font-size: 2.1em;
+} 
+
+main.about .container > .text__container > p {
+	text-transform: capitalize;
+	font-size: 1.1em;
+}
+
+main.about .container > .text__container > .add__info {
+	display: flex;
+	gap: 32px;
+}
+
+@media (max-width: 560px) {
+	main.about .container > .text__container > .add__info {
+		justify-content: center;
+	}
+} 
+
+main.about .container > .about__img__container {
+	width: 200px;
+	height: 300px;
+	background: url("../images/about-img.jpg") no-repeat top center;
+	background-size: cover;
+}
+
+@media (max-width: 560px) {
+	main.about .container > .about__img__container {
+		width: 100%;
+		height: 200px;
+	}
+} 
+
+/*End Main About*/
