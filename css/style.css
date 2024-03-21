@@ -17,19 +17,32 @@ body {
 	font-family: "Maven Pro", sans-serif;
 	color: var(--second-color);
 	min-height: 100vh;
+	z-index: 2;
 }
 
 body .bg__img__container {
 	background-position: top center;
 	background-repeat: no-repeat;
-	background-size: cover;
 	filter: brightness(50%);
+	background-size: cover;
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	height: 100%;
 	width: 100%;
-	transition: 1s ease-in-out filter;
+	transition: 0.4s ease-in-out filter;
+}
+
+body .bg__1 {
+	background-image: url(../images/bg-1.webp);
+}
+
+body .bg__2 {
+	background-image: url(../images/bg-2.webp);
+}
+
+body .bg__3 {
+	background-image: url(../images/bg-3.webp);
 }
 
 /*Start Vriables*/
@@ -94,6 +107,9 @@ header nav li:not(:last-child) {
 	margin-right: 24px;
 }
 
+header .social__links {
+	z-index: 1;
+}
 
 header .social__links > a:not(:first-child) {
 	margin-left: 8px;

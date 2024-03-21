@@ -16,21 +16,26 @@ function dotsAnimation() {
 	activeIndex++;
 }
 
-let imgContainer = document.querySelector(".bg__img__container");
+let imgContainers = document.querySelectorAll(".bg__img__container");
 
-bgActiveIndex = 1;
-console.log(imgContainer)
+bgActiveIndex = 0;
+console.log(imgContainers)
 
 function bgAnimation() {
-	imgContainer.style.backgroundImage = `url(images/bg-${bgActiveIndex}.webp)`;
-	setTimeout(function () {
-		imgContainer.style.filter = "brightness(0%)";
-	}, 4000);
-	bgActiveIndex == 3 ? bgActiveIndex = 0: true; // Because At The End Of The Function We Add 1
+	if (bgActiveIndex <= 2) {
+		for (i = 0; i <= 2; i++) {
+			if (i == bgActiveIndex) {
+				imgContainers[i].style.filter = "brightness(50%)";
+				imgContainers[i].style.zIndex = 0;
+				i == 2 ? bgActiveIndex = -1: true; // Because At The End Of The Function We Add 1
+			} else {
+				imgContainers[i].style.filter = "brightness(0%)";
+				imgContainers[i].style.zIndex = -1;
+			}
+		}
+	}
 	bgActiveIndex++;
-	setTimeout(function () {
-		imgContainer.style.filter = "brightness(50%)";
-	}, 1000);
+
 }
 
 setInterval(dotsAnimation, 5000);
