@@ -387,3 +387,132 @@ main.about .container > .about__img__container {
 } 
 
 /*End Main About*/
+
+/*Start Main Gallery*/
+
+main.gallery {
+	height: calc(100vh - 58.39px);
+	font-size: 16px;
+	position: relative;
+}
+
+@media (max-width: 560px) {
+	main.gallery {
+		height: calc(100vh - 56px);
+		font-size: 12px;
+	}
+}
+
+main.gallery::after {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	filter: brightness(30%);
+	z-index: -1;
+	display: none;
+	background-image: url(../images/about-img.jpg);
+	background-size: 200px;
+}
+
+@media (max-width: 996px) {
+	main.gallery::after {
+		display: block;
+	}
+}
+
+main.gallery .container {
+	height: calc(100% - 58.39px);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@media (max-width: 996px) {
+	main.gallery .container {
+		justify-content: center;
+		text-align: center;
+	}
+}
+
+@media (max-width: 560px) {
+	main.gallery .container {
+		height: calc(100% - 56px);
+		flex-direction: column;
+	}
+}
+
+main.gallery .container .gallery {
+	display: flex;
+	gap: 8px;
+	height: 100%;
+}
+
+@media (max-width: 996px) {
+	main.gallery .container .gallery {
+		display: none;
+	}
+}
+
+main.gallery .container .gallery > div {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+}
+
+
+main.gallery .container .gallery > .column__2 {
+	justify-content: flex-end;
+}
+
+main.gallery .container .gallery > .column__1 > div,
+main.gallery .container .gallery > .column__2 > div {
+	height: calc((100% - 50px) / 3);
+	aspect-ratio: 1 / 1;
+	overflow: hidden;
+}
+
+main.gallery .container .gallery img {
+	width: 100%;
+	height: auto;
+	transition: 0.7s ease-in-out transform;
+}
+
+main.gallery .container .gallery img:hover {
+	transform: rotate(10deg) scale(1.2);
+}
+
+main.gallery .container .text__container h1 {
+	font-size: 3.5em;
+	letter-spacing: 20px;
+    line-height: calc(100% + 15px);
+}
+
+main.gallery .text__container h1 span {
+	display: block;
+	font-weight: 700;
+	color: var(--third-color);
+}
+
+main.gallery .text__container a {
+	font-size: 1.1em;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	border: 1px var(--second-color) solid;
+	background-color: transparent;
+	padding: 8px 32px;
+	transition: 0.7s ease-in-out all;
+	display: inline-block;
+	margin-top: 20px;
+}
+
+main.gallery .text__container a:hover {
+	background-color: var(--second-color);
+	color: var(--main-color);
+}
+
+/*End Main Gallery*/
