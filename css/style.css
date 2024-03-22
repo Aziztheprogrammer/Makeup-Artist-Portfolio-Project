@@ -305,6 +305,13 @@ main.about .container {
 	position: relative;
 }
 
+@media (max-width: 560px) {
+	main.about .container {
+		height: calc(100% - 100px);
+		flex-direction: column;
+	}
+}
+
 main.about .container::after {
 	content: "Makeup Artist";
 	text-transform: uppercase;
@@ -326,13 +333,6 @@ main.about .container::after {
 		left: 50%;
 		transform: translateX(-50%);
 		writing-mode: horizontal-tb;
-	}
-}
-
-@media (max-width: 560px) {
-	main.about .container {
-		height: calc(100% - 56px);
-		flex-direction: column;
 	}
 }
 

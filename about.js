@@ -7,7 +7,7 @@ function pageLoaderAnimation() {
 		pageLoader.style.opacity = 0;
 		setTimeout (function () {
 			pageLoader.style.display = "none";
-		}, 100)
+		}, 1000)
 	}, 6000);
 }
 
