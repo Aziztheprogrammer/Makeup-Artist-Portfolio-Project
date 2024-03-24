@@ -3,12 +3,12 @@
 function pageLoaderAnimation() {
 	let pageLoader = document.querySelector(".page__loader");
 
-	setTimeout (function () {
-		pageLoader.style.opacity = 0;
-		setTimeout (function () {
-			pageLoader.style.display = "none";
-		}, 1000)
-	}, 6000);
+	new Promise(function(resolve, reject) {
+		setTimeout(() => {
+			pageLoader.style.opacity = 0;
+			resolve();
+		}, 6000);
+	}).then(function() {setTimeout(() => {pageLoader.style.display = "none"}, 1000)});
 }
 
 window.onload = pageLoaderAnimation;
